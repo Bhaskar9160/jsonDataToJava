@@ -57,5 +57,68 @@ public class ResultServiceImpl implements ResultService{
 		}
 		return usersLists;
 	}
-
+	@Override
+	public UsersDTO getUser(int userId) {
+		
+		return getUsers().stream().filter(u->u.getId()==userId).collect(Collectors.toList()).get(0);
+	}
+	@Override
+	public List<Posts> getUserPosts(int userId) {
+		
+		return userService.getPosts().stream().filter(p->p.getUserId()==userId).collect(Collectors.toList());
+	}
+	@Override
+	public Posts getPosts(Integer postId) {
+		
+		return userService.getPosts().stream().filter(p->p.getId()==postId).collect(Collectors.toList()).get(0);
+	}
+	@Override
+	public List<Comments> getUserComments(int postId) {
+		
+		return userService.getComments().stream().filter(c->c.getPostId()==postId).collect(Collectors.toList());
+	}
+	@Override
+	public Comments getComments(Integer postId) {
+		
+		return  userService.getComments().stream().filter(c->c.getId()==postId).collect(Collectors.toList()).get(0);
+	}
+	@Override
+	public List<Todos> getUserTodos(int userId) {
+		
+		return userService.getTodos().stream().filter(t->t.getUserId()==userId).collect(Collectors.toList());
+	}
+	@Override
+	public Todos getTodos(Integer userId) {
+		
+		return userService.getTodos().stream().filter(t->t.getId()==userId).collect(Collectors.toList()).get(0);
+	}
+	@Override
+	public List<Todos> getPendingTodos(int userId) {
+		List<Todos> todos=userService.getTodos();
+		List<Todos> userTodos=todos.stream().filter(t->t.getUserId()==userId).collect(Collectors.toList());
+		
+		List<Todos> pendingTodos=userTodos.stream().filter(t->t.isCompleted()==false).collect(Collectors.toList());
+		
+		return pendingTodos;
+	}
+	@Override
+	public List<Todos> getCompletedTodos(int userId) {
+		List<Todos> todos=userService.getTodos();
+List<Todos> userTodos=todos.stream().filter(t->t.getUserId()==userId).collect(Collectors.toList());
+		
+		List<Todos> compltedTodos=userTodos.stream().filter(t->t.isCompleted()==true).collect(Collectors.toList());
+		
+		return compltedTodos;
+	}
+	@Override
+	public List<Albums> getUserAlbums(int userId) {
+		
+		return userService.getAlbums().stream().filter(a->a.getUserId()==userId).collect(Collectors.toList());
+	}
+	@Override
+	public Albums getAlbums(Integer userId) {
+		
+		return userService.getAlbums().stream().filter(a->a.getId()==userId).collect(Collectors.toList()).get(0);
+	}
+	
 }

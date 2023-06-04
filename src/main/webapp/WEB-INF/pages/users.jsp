@@ -80,32 +80,32 @@
 							<table>
 								<tr>
 									<td>
-										<a href="userposts/${user.id }">Posts(${user.postCount })</a>
+										<a href="userposts/${user.id }" target="_blank">Posts(${user.postCount })</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<a href="usercomments/${user.id }">Comments(${user.commentCount })</a>
+										<a href="usercomments/${user.id }" target="_blank">Comments(${user.commentCount })</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<a href="userstodos?id=${user.id }">Todos(${user.todosCount })</a>
+										<a href="userstodos/${user.id }" target="_blank">Todos(${user.todosCount })</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<a href="userspendingtodos?id=${user.id }">PendingTodos(${user.pendingTodosCount })</a>
+										<a href="userspendingtodos/${user.id }" target="_blank">PendingTodos(${user.pendingTodosCount })</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<a href="userscompletedtodos?id=${user.id }">CompltedTodos(${user.completedCount})</a>
+										<a href="userscompletedtodos/${user.id }" target="_blank">CompltedTodos(${user.completedCount})</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<a href="usersalbums?id=${user.id }">Albums(${user.albumsCount })</a>
+										<a href="usersalbums/${user.id }" target="_blank">Albums(${user.albumsCount })</a>
 									</td>
 								</tr>
 							</table>

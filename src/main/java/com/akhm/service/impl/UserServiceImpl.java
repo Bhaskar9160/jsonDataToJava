@@ -29,8 +29,6 @@ public class UserServiceImpl implements UserService{
 	      objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, User.class);
 	    List<User> userList = objectMapper.readValue(jsonString, listType);
 
-
-		
 		return userList;
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -46,14 +44,11 @@ public class UserServiceImpl implements UserService{
 		      objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Todos.class);
 		    List<Todos> todosList = objectMapper.readValue(jsonString, listType);
 
-
-			
 			return todosList;
 			}catch (Exception e) {
 				e.printStackTrace();
 				return new ArrayList<Todos>();
 			}
-		
 	}
 	@Override
 	public List<Posts> getPosts() {
@@ -64,14 +59,11 @@ public class UserServiceImpl implements UserService{
 		      objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Posts.class);
 		    List<Posts> postsList = objectMapper.readValue(jsonString, listType);
 
-
-			
 			return postsList;
 			}catch (Exception e) {
 				e.printStackTrace();
 				return new ArrayList<Posts>();
 			}
-		
 	}
 	@Override
 	public List<Comments> getComments() {
@@ -82,8 +74,6 @@ public class UserServiceImpl implements UserService{
 		      objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Comments.class);
 		    List<Comments> commentsList = objectMapper.readValue(jsonString, listType);
 
-
-			
 			return commentsList;
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -100,8 +90,6 @@ public class UserServiceImpl implements UserService{
 		      objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Albums.class);
 		    List<Albums> albumsList = objectMapper.readValue(jsonString, listType);
 
-
-			
 			return albumsList;
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -117,8 +105,6 @@ public class UserServiceImpl implements UserService{
 		      objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Photos.class);
 		    List<Photos> photosList = objectMapper.readValue(jsonString, listType);
 
-
-			
 			return photosList;
 			}catch (Exception e) {
 				e.printStackTrace();

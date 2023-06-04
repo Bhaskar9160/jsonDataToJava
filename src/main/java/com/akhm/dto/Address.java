@@ -1,7 +1,5 @@
 package com.akhm.dto;
 
-
-
 public class Address {
 	private String street;
 	private String suite;
